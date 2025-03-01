@@ -1,8 +1,12 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { CreateMessageDto } from './dtos/create-message.dto'
+import { MessagesService } from './messages.service';
 
 @Controller('messages')
 export class MessagesController {
+
+  constructor(public messagesService: MessagesService) {
+  }
 
   @Get()
   listMessages(){}
